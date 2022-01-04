@@ -25,9 +25,9 @@ class MiPCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       constraints: BoxConstraints(
-          maxWidth: MediaQuery.of(context).size.width <= 400
+          maxWidth: MediaQuery.of(context).size.width <= 520
               ? MediaQuery.of(context).size.width
-              : 400,
+              : 520,
           maxHeight: 290),
       child: Card(
         shape: RoundedRectangleBorder(

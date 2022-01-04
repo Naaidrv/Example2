@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               )),
-          brightness: Brightness.dark),
+          brightness: Brightness.light),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -84,78 +84,137 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            MiPCard(
-              //imageURL: 'https://docs.flutter.dev/assets/images/dash/Dash.png',
-              titleWidget: const ListTile(
-                leading: CircleAvatar(
-                  child: FlutterLogo(
-                    size: 100,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Botones',
+                  style: Theme.of(context).textTheme.headline4,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Module Button',
+                  style: Theme.of(context).textTheme.headline5,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: MiPModuleIconButton(
+                    onPressed: () {}, iconData: Icons.house),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Common Buttons',
+                  style: Theme.of(context).textTheme.headline5,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    MiPButton(
+                      onPressed: () {},
+                      title: 'Prioridad 1',
+                    ),
+                    MiPButton(
+                      onPressed: () {},
+                      title: 'Prioridad 2',
+                      type: 2,
+                    ),
+                    MiPButton(
+                      onPressed: () {},
+                      title: 'Prioridad 3',
+                      type: 3,
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Cards',
+                  style: Theme.of(context).textTheme.headline4,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: MiPCard(
+                  //imageURL: 'https://docs.flutter.dev/assets/images/dash/Dash.png',
+                  titleWidget: const ListTile(
+                    leading: CircleAvatar(
+                      child: FlutterLogo(
+                        size: 100,
+                      ),
+                    ),
+                    title: Text('Curso de gestión de Tiempo'),
+                    subtitle: Text('subtitulo de curso de gestión de Tiempo'),
+                  ),
+                  subtitleWidget: const Text('como estas????'),
+                  mainButton: SizedBox(
+                    width: 100,
+                    child: MiPButton(
+                      onPressed: () {},
+                      title: 'Goooooooooooogle',
+                      type: 3,
+                    ),
+                  ),
+                  /*secondaryButton: OutlinedButton(
+                      onPressed: () {}, child: const Text('Boton 2')),*/
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: MiPCard(
+                  imageURL:
+                      'https://docs.flutter.dev/assets/images/dash/Dash.png',
+                  titleWidget: const Text('Curso de gestión de Tiempo'),
+                  subtitleWidget: const Text('como estas????'),
+                  mainButton: MiPButton(onPressed: () {}, title: 'Google'),
+                  /*secondaryButton: OutlinedButton(
+                      onPressed: () {}, child: const Text('Boton 2')),*/
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SizedBox(
+                  width: 200,
+                  height: 200,
+                  child: MiPCard(
+                    imageURL:
+                        'https://docs.flutter.dev/assets/images/dash/Dash.png',
+                    titleWidget: const Text('Curso de gestión de Tiempo'),
+                    subtitleWidget: const Text('como estas????'),
+                    mainButton: MiPButton(onPressed: () {}, title: 'Google'),
+                    /*secondaryButton: OutlinedButton(
+                        onPressed: () {}, child: const Text('Boton 2')),*/
                   ),
                 ),
-                title: Text('Curso de gestión de Tiempo'),
-                subtitle: Text('subtitulo de curso de gestión de Tiempo'),
               ),
-              subtitleWidget: const Text('como estas????'),
-              mainButton: SizedBox(
-                width: 100,
-                child: MiPButton(
-                  onPressed: () {},
-                  title: 'Goooooooooooogle',
-                  type: 3,
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: MiPCard(
+                  //imageURL: 'https://docs.flutter.dev/assets/images/dash/Dash.png',
+                  titleWidget: Text('Curso de gestión de Tiempo'),
+                  subtitleWidget: Text('como estas????'),
+                  /*mainButton: OutlinedButton(
+                      onPressed: () {}, child: const Text('Boton 1')),*/
+                  /*secondaryButton: OutlinedButton(
+                      onPressed: () {}, child: const Text('Boton 2')),*/
                 ),
               ),
-              /*secondaryButton: OutlinedButton(
-                  onPressed: () {}, child: const Text('Boton 2')),*/
-            ),
-            SizedBox(
-              width: 200,
-              height: 200,
-              child: MiPCard(
-                imageURL:
-                    'https://docs.flutter.dev/assets/images/dash/Dash.png',
-                titleWidget: const Text('Curso de gestión de Tiempo'),
-                subtitleWidget: const Text('como estas????'),
-                mainButton: MiPButton(onPressed: () {}, title: 'Google'),
-                /*secondaryButton: OutlinedButton(
-                    onPressed: () {}, child: const Text('Boton 2')),*/
+              const SizedBox(
+                height: 100,
               ),
-            ),
-            const MiPCard(
-              //imageURL: 'https://docs.flutter.dev/assets/images/dash/Dash.png',
-              titleWidget: Text('Curso de gestión de Tiempo'),
-              subtitleWidget: Text('como estas????'),
-              /*mainButton: OutlinedButton(
-                  onPressed: () {}, child: const Text('Boton 1')),*/
-              /*secondaryButton: OutlinedButton(
-                  onPressed: () {}, child: const Text('Boton 2')),*/
-            ),
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            ListTile(),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            MiPModuleIconButton(onPressed: () {}, icon: Icons.house)
-          ],
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(

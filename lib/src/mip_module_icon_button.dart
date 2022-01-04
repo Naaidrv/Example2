@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class MiPModuleIconButton extends StatelessWidget {
   final GestureTapCallback onPressed;
-  final IconData icon;
+  final IconData iconData;
 
   const MiPModuleIconButton(
-      {Key? key, required this.onPressed, required this.icon})
+      {Key? key, required this.onPressed, required this.iconData})
       : super(key: key);
 
   @override
@@ -24,9 +24,9 @@ class MiPModuleIconButton extends StatelessWidget {
         child: IconButton(
           iconSize: 28,
           onPressed: onPressed,
-          icon: const Icon(
-            Icons.house,
-            color: Color(0xff330633),
+          icon: Icon(
+            iconData,
+            color: const Color(0xff330633),
           ),
           splashRadius: 30,
         ),
