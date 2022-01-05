@@ -29,8 +29,7 @@ class MiPCard extends StatelessWidget {
       constraints: BoxConstraints(
           maxWidth: MediaQuery.of(context).size.width <= 520
               ? MediaQuery.of(context).size.width
-              : 520,
-          maxHeight: 290),
+              : 520),
       child: Card(
         color: customColor,
         shape: RoundedRectangleBorder(
@@ -47,23 +46,26 @@ class MiPCard extends StatelessWidget {
                       borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(10),
                           topRight: Radius.circular(10)),
-                      child: CachedNetworkImage(
-                        imageUrl: imageURL!,
-                        imageBuilder: (context, imageProvider) => Container(
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                            image: imageProvider,
-                            fit: BoxFit.cover,
-                          )),
+                      child: Container(
+                        constraints: const BoxConstraints(minHeight: 120),
+                        child: CachedNetworkImage(
+                          imageUrl: imageURL!,
+                          imageBuilder: (context, imageProvider) => Container(
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                              image: imageProvider,
+                              fit: BoxFit.cover,
+                            )),
+                          ),
+                          progressIndicatorBuilder:
+                              (context, url, downloadProgress) =>
+                                  CircularProgressIndicator(
+                                      value: downloadProgress.progress),
+                          errorWidget: (context, url, error) {
+                            print(error);
+                            return const Icon(Icons.error);
+                          },
                         ),
-                        progressIndicatorBuilder:
-                            (context, url, downloadProgress) =>
-                                CircularProgressIndicator(
-                                    value: downloadProgress.progress),
-                        errorWidget: (context, url, error) {
-                          print(error);
-                          return const Icon(Icons.error);
-                        },
                       ),
                     ),
                   ),
