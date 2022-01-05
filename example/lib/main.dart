@@ -87,13 +87,62 @@ class _MyHomePageState extends State<MyHomePage> {
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   'Botones',
                   style: Theme.of(context).textTheme.headline4,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'App Button',
+                  style: Theme.of(context).textTheme.headline5,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    MiPAppButton(
+                      onPressed: () {},
+                      buttonTitle: 'Culturaaaaaaaa',
+                      imageProvider:
+                          Image.asset('lib/Assets/LinkCultura.png').image,
+                    ),
+                    MiPAppButton(
+                      onPressed: () {},
+                      buttonTitle: 'Cultura',
+                      imageProvider:
+                          Image.asset('lib/Assets/LinkCultura.png').image,
+                    ),
+                    MiPAppButton(
+                      onPressed: () {},
+                      buttonTitle: 'Cultura',
+                      imageProvider:
+                          Image.asset('lib/Assets/LinkCultura.png').image,
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Link Button',
+                  style: Theme.of(context).textTheme.headline5,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: MiPLinkButton(
+                  onPressed: () {},
+                  buttonTitle: 'Préstamo de caja de ahorro de disponibilidad',
+                  imageProvider:
+                      Image.asset('lib/Assets/AdvisoryImage1.png').image,
                 ),
               ),
               Padding(

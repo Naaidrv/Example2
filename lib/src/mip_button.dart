@@ -25,8 +25,9 @@ class MiPButton extends StatelessWidget {
 
     ButtonStyle? defaultButtonStyle = OutlinedButton.styleFrom(
       textStyle: TextStyle(
-          fontFamily: GoogleFonts.montserrat().fontFamily,
-          fontWeight: FontWeight.w600,
+          fontFamily: GoogleFonts.poppins().fontFamily,
+          fontWeight: FontWeight.w500,
+          fontSize: 14,
           overflow: TextOverflow.ellipsis),
       primary: Colors.white,
       backgroundColor: const Color(0xff83487D),
@@ -38,8 +39,9 @@ class MiPButton extends StatelessWidget {
 
     ButtonStyle? secondaryButtonStyle = OutlinedButton.styleFrom(
       textStyle: TextStyle(
-          fontFamily: GoogleFonts.montserrat().fontFamily,
+          fontFamily: GoogleFonts.poppins().fontFamily,
           fontWeight: FontWeight.w600,
+          fontSize: 14,
           overflow: TextOverflow.ellipsis),
       primary: const Color(0xff8B4380),
       backgroundColor: const Color(0xffFFD5F3),
@@ -51,8 +53,9 @@ class MiPButton extends StatelessWidget {
 
     ButtonStyle? tertiaryButtonStyle = OutlinedButton.styleFrom(
       textStyle: TextStyle(
-          fontFamily: GoogleFonts.montserrat().fontFamily,
+          fontFamily: GoogleFonts.poppins().fontFamily,
           fontWeight: FontWeight.w600,
+          fontSize: 14,
           overflow: TextOverflow.ellipsis),
       primary: const Color(0xff8B4380),
       backgroundColor: Colors.transparent,

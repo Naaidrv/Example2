@@ -9,6 +9,7 @@ class MiPCard extends StatelessWidget {
   final EdgeInsetsGeometry? subtitlePadding;
   final Widget? mainButton;
   final Widget? secondaryButton;
+  final Color? customColor;
 
   const MiPCard(
       {Key? key,
@@ -18,7 +19,8 @@ class MiPCard extends StatelessWidget {
       this.mainButton,
       this.secondaryButton,
       this.subtitlePadding,
-      this.titlePadding})
+      this.titlePadding,
+      this.customColor})
       : super(key: key);
 
   @override
@@ -30,6 +32,7 @@ class MiPCard extends StatelessWidget {
               : 520,
           maxHeight: 290),
       child: Card(
+        color: customColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
