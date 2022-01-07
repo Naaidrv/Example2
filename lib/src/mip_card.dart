@@ -43,6 +43,8 @@ class MiPCard extends StatelessWidget {
             imageURL == null
                 ? Container()
                 : Flexible(
+                    flex: 1,
+                    fit: FlexFit.loose,
                     child: ClipRRect(
                       borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(10),
@@ -71,6 +73,7 @@ class MiPCard extends StatelessWidget {
                     ),
                   ),
             Flexible(
+              flex: 3,
               fit: FlexFit.loose,
               child: Container(
                 child: Column(
