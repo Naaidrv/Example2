@@ -225,8 +225,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   imageURL:
                       'https://docs.flutter.dev/assets/images/dash/Dash.png',
                   titleWidget: const Text('Curso de gestión de Tiempo'),
-                  subtitleWidget:
-                      const Text('como estas???? \n \n \n \n \n \n ...bien!!!'),
+                  subtitleWidget: const Text(
+                      'como estas???? \n\n\n\n \n\n\n\n \n\n\n\n \n\n\n\n         ...bien!!!'),
                   mainButton: MiPButton(onPressed: () {}, title: 'Google'),
                   /*secondaryButton: OutlinedButton(
                       onPressed: () {}, child: const Text('Boton 2')),*/

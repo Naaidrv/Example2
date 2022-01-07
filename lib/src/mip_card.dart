@@ -31,6 +31,7 @@ class MiPCard extends StatelessWidget {
               ? MediaQuery.of(context).size.width
               : 520),
       child: Card(
+        clipBehavior: Clip.antiAlias,
         color: customColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
@@ -47,7 +48,7 @@ class MiPCard extends StatelessWidget {
                           topLeft: Radius.circular(10),
                           topRight: Radius.circular(10)),
                       child: Container(
-                        constraints: const BoxConstraints(minHeight: 120),
+                        constraints: const BoxConstraints(minHeight: 180),
                         child: CachedNetworkImage(
                           imageUrl: imageURL!,
                           imageBuilder: (context, imageProvider) => Container(
@@ -69,43 +70,47 @@ class MiPCard extends StatelessWidget {
                       ),
                     ),
                   ),
-            Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Padding(
-                    padding: titlePadding == null
-                        ? const EdgeInsets.all(8.0)
-                        : titlePadding!,
-                    child: titleWidget == null ? Container() : titleWidget!,
-                  ),
-                  Padding(
-                    padding: subtitlePadding == null
-                        ? const EdgeInsets.only(
-                            left: 8.0, right: 8.0, bottom: 8.0)
-                        : subtitlePadding!,
-                    child:
-                        subtitleWidget == null ? Container() : subtitleWidget!,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      mainButton == null
+            Flexible(
+              fit: FlexFit.loose,
+              child: Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Padding(
+                      padding: titlePadding == null
+                          ? const EdgeInsets.all(8.0)
+                          : titlePadding!,
+                      child: titleWidget == null ? Container() : titleWidget!,
+                    ),
+                    Padding(
+                      padding: subtitlePadding == null
+                          ? const EdgeInsets.only(
+                              left: 8.0, right: 8.0, bottom: 8.0)
+                          : subtitlePadding!,
+                      child: subtitleWidget == null
                           ? Container()
-                          : Padding(
-                              padding: const EdgeInsets.only(
-                                  top: 8.0, bottom: 8.0, right: 14.0),
-                              child: mainButton!,
-                            ),
-                      secondaryButton == null
-                          ? Container()
-                          : Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: secondaryButton!,
-                            ),
-                    ],
-                  ),
-                ],
+                          : subtitleWidget!,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: <Widget>[
+                        mainButton == null
+                            ? Container()
+                            : Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 8.0, bottom: 8.0, right: 14.0),
+                                child: mainButton!,
+                              ),
+                        secondaryButton == null
+                            ? Container()
+                            : Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: secondaryButton!,
+                              ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
